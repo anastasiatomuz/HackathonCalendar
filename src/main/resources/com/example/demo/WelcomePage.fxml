@@ -14,7 +14,7 @@
          </font>
       </Label>
       <Label layoutX="263.0" layoutY="192.0" text="choose a date" />
-      <Button fx:id="enterButton" layoutX="278.0" layoutY="262.0" mnemonicParsing="false" onAction="#switchToApp" text="Enter" />
+      <Button fx:id="enterButton" layoutX="278.0" layoutY="262.0" mnemonicParsing="false" onAction="#switchToApp" style="-fx-background-color: #4287f5;" text="Enter" textFill="WHITE" />
       <DatePicker fx:id="dateField" layoutX="215.0" layoutY="221.0" />
       <Label layoutX="96.0" layoutY="74.0" text="Welcome to the Calendar App!">
          <font>

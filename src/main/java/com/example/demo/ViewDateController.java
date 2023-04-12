@@ -33,4 +33,15 @@ public class ViewDateController {
         stage.setScene(scene);
         stage.show();
     }
+
+    public void viewEvent(ActionEvent e){
+
+
+    }
+
+    public void addNewEvent(ActionEvent e){
+
+    }
+
+
 }

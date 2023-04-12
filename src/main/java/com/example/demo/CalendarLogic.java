@@ -17,9 +17,22 @@ public class CalendarLogic {
         calendarList = new HashMap<>();
     }
 
-    public void addEvent(String title, boolean allDay, String startTime, String endTime, String info){
-        Event newEvent = new Event(title, allDay, startTime, endTime, info);
-        eventsList.add(newEvent);
+    //getter and setter methods
+    public ArrayList<Event> getEventsList(){
+        return eventsList;
+    }
+
+    public Event getCalendarEvent(){
+        return calendarEvent;
+    }
+
+    public void createEvent(){
+        calendarEvent = new Event();
+
+    }
+
+    public void addToList(){
+        eventsList.add(calendarEvent);
     }
 
     //adding keys and values to HashMaps

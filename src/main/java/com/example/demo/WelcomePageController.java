@@ -19,12 +19,18 @@ public class WelcomePageController {
     private Stage stage;
     private Scene scene;
     private Parent root;
+    private String formattedDate;
+
+    //getter and setter methods
+    public String getFormattedDate(){
+        return formattedDate;
+    }
 
     public void switchToApp(ActionEvent event) throws IOException {
 
         //storing date in MM-DD-YYYY format
         LocalDate date = dateField.getValue();
-        String formattedDate = date.format(DateTimeFormatter.ofPattern("MM/dd/yyyy"));
+        formattedDate = date.format(DateTimeFormatter.ofPattern("MM/dd/yyyy"));
 
         //loads window
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("ViewDate.fxml"));
