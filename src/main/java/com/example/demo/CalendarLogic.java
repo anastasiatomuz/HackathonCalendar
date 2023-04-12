@@ -12,7 +12,7 @@ public class CalendarLogic {
 
     //constructor
     public CalendarLogic(){
-        event = null;
+        calendarEvent = null;
         eventsList = new ArrayList<>();
         calendarList = new HashMap<>();
     }

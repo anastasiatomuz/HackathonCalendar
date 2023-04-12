@@ -22,7 +22,7 @@ public class ViewDateController {
         dateLabel.setText(date);
     }
 
-    public
+//    public
 
     //return to welcome page
     public void returnToWelcomePage(ActionEvent event) throws IOException {
