@@ -26,9 +26,20 @@ public class ViewDateController {
     private TextField eventToView;
     private Stage stage;
     private Scene scene;
+    private String date;
 
-    public void displayDate(String date){
+
+    public void setDate(String newDate){
+        date = newDate;
+    }
+
+    public String getDate(){
+        return date;
+    }
+
+    public void displayDate(){
         dateLabel.setText(date);
+        dateLabel.setAlignment(Pos.CENTER);
     }
 
     //return to welcome page
@@ -37,6 +48,17 @@ public class ViewDateController {
         //loads window
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("WelcomePage.fxml"));
         //load the scene/window
+        stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(fxmlLoader.load());
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    //switches to the create event page
+    public void addNewEvent(ActionEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("CreateEvent.fxml"));
+
+
         stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(fxmlLoader.load());
         stage.setScene(scene);

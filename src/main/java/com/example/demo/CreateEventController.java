@@ -14,12 +14,13 @@ import java.io.IOException;
 
 public class CreateEventController {
     @FXML
-    Label dateLabel;
+    private Label dateLabel;
     private Stage stage;
     private Scene scene;
     private WelcomePageController welcomePageController;
     private ViewDateController viewDateController;
     private CalendarLogic calendarLogic;
+
     @FXML
     private TextField titleField;
     @FXML
@@ -33,7 +34,9 @@ public class CreateEventController {
 
 
 
-    public void switchBack(ActionEvent e) throws IOException{
+    public void switchBack(ActionEvent e) throws IOException {
+        welcomePageController = new WelcomePageController();
+        viewDateController = new ViewDateController();
         welcomePageController.switchToApp(e);
         viewDateController.listEventsAvailableForDay();
     }
@@ -55,17 +58,17 @@ public class CreateEventController {
         String end = endTimeField.getText();
         String info = infoArea.getText();
 
-        calendarLogic.createEvent();
-        calendarLogic.getCalendarEvent().setTitle(title);
-        calendarLogic.getCalendarEvent().setAllDay(allDay);
-        calendarLogic.getCalendarEvent().setStartTime(start);
-        calendarLogic.getCalendarEvent().setEndTime(end);
-        calendarLogic.getCalendarEvent().setInfo(info);
+        //add the info about the day to the event object
+        newEvent.setTitle(title);
+        newEvent.setAllDay(allDay);
+        newEvent.setStartTime(start);
+        newEvent.setEndTime(end);
+        newEvent.setInfo(info);
 
-
-        calendarLogic.addToList();
-        calendarLogic.addToHashMap(welcomePageController.getFormattedDate(), calendarLogic.getEventsList());
+        if (!CalendarLogic.hasEvents(currentDate)) {
+            CalendarLogic.addFirstEvent(currentDate, newEvent);
+        } else {
+            CalendarLogic.addEventToDay(currentDate, newEvent);
+        }
     }
-
-
 }
