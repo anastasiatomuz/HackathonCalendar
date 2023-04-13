@@ -7,19 +7,19 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.ViewDateController">
+<AnchorPane prefHeight="533.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.ViewDateController">
    <children>
-      <Label fx:id="dateLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="280.0" layoutY="25.0" text="Date">
+      <Label fx:id="dateLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="439.0" layoutY="27.0" text="Date">
          <font>
-            <Font size="27.0" />
+            <Font size="50.0" />
          </font>
       </Label>
-      <TextArea layoutX="41.0" layoutY="107.0" prefHeight="155.0" prefWidth="513.0" text="No events yet" />
-      <Label layoutX="40.0" layoutY="82.0" text="List of Events for the Day" />
-      <TextField fx:id="eventToView" layoutX="397.0" layoutY="290.0" prefHeight="26.0" prefWidth="37.0" />
-      <Label layoutX="40.0" layoutY="294.0" text="Type in the number associated with the event you want to view:" />
-      <Button fx:id="viewEventButton" layoutX="464.0" layoutY="281.0" mnemonicParsing="false" onAction="#viewEvent" prefHeight="44.0" prefWidth="70.0" style="-fx-background-color: #4287f5;" text="Enter" textFill="WHITE" />
-      <Button fx:id="exitViewDateButton" layoutX="24.0" layoutY="352.0" mnemonicParsing="false" onAction="#returnToWelcomePage" style="-fx-background-color: #4287f5;" text="Go Back" textFill="WHITE" />
-      <Button layoutX="258.0" layoutY="352.0" mnemonicParsing="false" onAction="#addNewEvent" style="-fx-background-color: #4287f5;" text="Add New Event" textFill="WHITE" />
+      <TextArea fx:id="displayCurrentEvents" layoutX="109.0" layoutY="140.0" prefHeight="173.0" prefWidth="764.0" text="No events yet" />
+      <Label layoutX="116.0" layoutY="114.0" text="List of Events for the Day" />
+      <TextField fx:id="eventToView" layoutX="532.0" layoutY="359.0" prefHeight="26.0" prefWidth="104.0" text="Event Number" />
+      <Label layoutX="149.0" layoutY="363.0" text="Type in the number associated with the event you want to view:" />
+      <Button fx:id="viewEventButton" layoutX="653.0" layoutY="350.0" mnemonicParsing="false" onAction="#viewEvent" prefHeight="44.0" prefWidth="70.0" text="Enter" />
+      <Button fx:id="exitViewDateButton" layoutX="906.0" layoutY="472.0" mnemonicParsing="false" onAction="#returnToWelcomePage" text="Exit" />
+      <Button layoutX="439.0" layoutY="472.0" mnemonicParsing="false" onAction="#addNewEvent" text="Add New Event" />
    </children>
 </AnchorPane>

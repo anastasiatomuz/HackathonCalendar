@@ -3,18 +3,27 @@ package com.example.demo;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Pos;
 import javafx.scene.Node;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 
 public class ViewDateController {
     @FXML
-    Label dateLabel;
+    private Label dateLabel;
+    @FXML
+    private TextArea displayCurrentEvents;
+    @FXML
+    private TextField eventToView;
     private Stage stage;
     private Scene scene;
 
@@ -35,12 +44,18 @@ public class ViewDateController {
     }
 
     public void viewEvent(ActionEvent e){
-
-
+        eventToView.setText("Event viewed!");
     }
 
-    public void addNewEvent(ActionEvent e){
-
+    public void listEventsAvailableForDay(){
+        if (!CalendarLogic.hasEvents(date)){
+            displayCurrentEvents.setText("No event available for this date yet");
+        } else {
+            ArrayList<Event> dayEventList = CalendarLogic.getListOfEvents(date);
+            for (int i = 0; i < dayEventList.size(); i ++){
+                displayCurrentEvents.appendText(i + ". " + dayEventList.get(i) + "\n");
+            }
+        }
     }
 
 

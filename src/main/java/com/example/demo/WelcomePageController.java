@@ -39,7 +39,9 @@ public class WelcomePageController {
         //create object of AppController to gain access to methods (like displaying the typed-in year)
         ViewDateController appController = fxmlLoader.getController();
         //change the text in the App window to the year the user decided on
-        appController.displayDate(formattedDate);
+        appController.setDate(formattedDate);
+        appController.displayDate();
+        appController.listEventsAvailableForDay();
 
         //load the scene/window
         stage = (Stage) ((Node)event.getSource()).getScene().getWindow();

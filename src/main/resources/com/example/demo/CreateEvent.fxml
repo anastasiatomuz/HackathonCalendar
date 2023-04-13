@@ -8,10 +8,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.CreateEventController">
    <children>
-      <Label layoutX="198.0" layoutY="28.0" text="Create Your Event">
+      <Label layoutX="194.0" layoutY="14.0" text="Create Your Event">
          <font>
             <Font size="27.0" />
          </font>
@@ -29,5 +28,6 @@
       <TextArea layoutX="313.0" layoutY="125.0" prefHeight="132.0" prefWidth="258.0" />
       <Button layoutX="21.0" layoutY="355.0" mnemonicParsing="false" onAction="#switchBack" style="-fx-background-color: #4287f5;" text="Go Back" textFill="WHITE" />
       <Button layoutX="261.0" layoutY="292.0" mnemonicParsing="false" onAction="#addComplete" style="-fx-background-color: #4287f5;" text="Add Event" textFill="WHITE" />
+      <Label fx:id="dateLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="287.0" layoutY="53.0" text="Date" />
    </children>
 </AnchorPane>

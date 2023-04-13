@@ -18,6 +18,7 @@ public class CreateEventController {
     private Stage stage;
     private Scene scene;
     private WelcomePageController welcomePageController;
+    private ViewDateController viewDateController;
     private CalendarLogic calendarLogic;
     @FXML
     private TextField titleField;
@@ -30,12 +31,25 @@ public class CreateEventController {
     @FXML
     private TextArea infoArea;
 
+
+
     public void switchBack(ActionEvent e) throws IOException{
         welcomePageController.switchToApp(e);
+        viewDateController.listEventsAvailableForDay();
     }
 
-    public void addComplete(ActionEvent e) throws IOException{
+    public void displayDate(String date){
+        dateLabel.setText(date);
+    }
+
+    public void addComplete(ActionEvent e) {
+        //viewDateController = new ViewDateController();
+
+        String currentDate = "4/13/2023";
+
+        Event newEvent = new Event();
         String title = titleField.getText();
+        System.out.println(title);
         boolean allDay = radioButton.isDisabled();
         String start = startTimeField.getText();
         String end = endTimeField.getText();
