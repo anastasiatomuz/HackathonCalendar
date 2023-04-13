@@ -9,12 +9,12 @@ public class Event {
     private String endTime;
 
     //constructor
-    public Event(String title, boolean allDay, String startTime, String endTime, String info){
-        this.title = title;
-        this.allDay = allDay;
-        this.startTime = startTime;
-        this.endTime = endTime;
-        this.info = info;
+    public Event(){
+        title = "Blank";
+        allDay = false;
+        startTime = "unknown";
+        endTime = "unknown";
+        info = "n/a";
     }
 
     //getter and setter methods
