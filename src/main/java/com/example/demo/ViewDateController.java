@@ -63,16 +63,37 @@ public class ViewDateController {
     //switches to the create event page
     public void addNewEvent(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("CreateEvent.fxml"));
-
-
+        Parent root = fxmlLoader.load();
+        CreateEventController createEventController = fxmlLoader.getController();
+        createEventController.addDate(date);
+        createEventController.displayDate();
         stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(fxmlLoader.load());
+        scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
     }
 
-    public void viewEvent(ActionEvent e){
-        eventToView.setText("Event viewed!");
+    public void viewEvent(ActionEvent e) throws IOException {
+        Event theEvent = new Event();
+        int eventChosenNum = Integer.parseInt(eventToView.getText()) - 1;
+        for (int i = 0; i < CalendarLogic.getListOfEvents(date).size(); i++){
+            if (eventChosenNum == i){
+                theEvent = CalendarLogic.getListOfEvents(date).get(i);
+            } 
+        }
+        
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("ViewEvent.fxml"));
+        Parent root = fxmlLoader.load();
+        
+        ViewEventController viewEventController = fxmlLoader.getController();
+        viewEventController.setDate(date);
+        viewEventController.setEvent(theEvent);
+        viewEventController.displayEventInfo();
+      
+        stage = (Stage) ((Node)e.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
     }
 
     public void listEventsAvailableForDay(){
@@ -83,8 +104,8 @@ public class ViewDateController {
             displayCurrentEvents.setText("No event available for this date yet");
         } else {
             ArrayList<Event> dayEventList = CalendarLogic.getListOfEvents(date);
-            for (int i = 1; i < dayEventList.size(); i ++){
-                displayCurrentEvents.appendText(i + ". " + dayEventList.get(i).getTitle() + "\n");
+            for (int i = 0; i < dayEventList.size(); i ++){
+                displayCurrentEvents.appendText((i + 1) + ". " + dayEventList.get(i).getTitle() + "\n");
             }
         }
     }

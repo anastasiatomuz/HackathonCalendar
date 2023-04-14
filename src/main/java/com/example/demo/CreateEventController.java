@@ -33,37 +33,16 @@ public class CreateEventController {
     private ViewDateController viewDateController;
     private CalendarLogic calendarLogic;
     private Parent root;
-
-//    @FXML
-//    TextField titleField;
-    @FXML
-    RadioButton radioButton;
-    @FXML
-    RadioButton radioButton2;
-    @FXML
-    TextField startTimeField;
-    @FXML
-    TextField endTimeField;
-    @FXML
-    TextArea infoArea;
-
-    @FXML
-    Button addEventButton;
-
-    private String title;
+    private String date;
 
     //constructor
     public CreateEventController (){
-//        titleField = new TextField();
-        radioButton = new RadioButton();
-        radioButton2 = new RadioButton();
-        startTimeField = new TextField();
-        endTimeField = new TextField();
-        infoArea = new TextArea();
-        title = "";
-
+        date = "";
     }
 
+    public void addDate(String dateToAdd){
+        date = dateToAdd;
+    }
 
     public void switchBack(ActionEvent e) throws IOException {
         welcomePageController = new WelcomePageController();
@@ -72,27 +51,17 @@ public class CreateEventController {
         viewDateController.listEventsAvailableForDay();
     }
 
-    public void displayDate(String date){
+    public void displayDate(){
         dateLabel.setText(date);
     }
 
     public void addComplete(ActionEvent e) throws IOException {
-        //viewDateController = new ViewDateController();
-        System.out.println("ahhhhhhhhhhh");
-        String currentDate = "4/13/2023";
 
         String title = peterPan.getText();
-        boolean allDay = radioButton.isDisabled();
-        String start = startTimeField.getText();
-        String end = endTimeField.getText();
-        String info = infoArea.getText();
-
-        System.out.println(title);
-        System.out.println(allDay);
-        System.out.println(start);
-        System.out.println(end);
-        System.out.println(info);
-
+        boolean allDay = captainHook.isDisabled();
+        String start = spongeBob.getText();
+        String end = patrick.getText();
+        String info = sofiaTheFirst.getText();
 
 
         Event newEvent = new Event();
@@ -104,17 +73,12 @@ public class CreateEventController {
         newEvent.setInfo(info);
 
         //adds event to the hashmap
-        if (!CalendarLogic.hasEvents(currentDate)) {
-            CalendarLogic.addFirstEvent(currentDate, newEvent);
+        if (!CalendarLogic.hasEvents(date)) {
+            CalendarLogic.addFirstEvent(date, newEvent);
         } else {
-            CalendarLogic.addEventToDay(currentDate, newEvent);
+            CalendarLogic.addEventToDay(date, newEvent);
         }
 
-        ArrayList<Event> list = CalendarLogic.getListOfEvents(currentDate);
-        for (Event event : list){
-            System.out.println(event);
-            System.out.println(event.getTitle());
-        }
 
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("ViewDate.fxml"));
         root = fxmlLoader.load();
@@ -122,7 +86,7 @@ public class CreateEventController {
         viewDateController = fxmlLoader.getController();
 
         //set the date for the view date window
-        viewDateController.setDate(currentDate);
+        viewDateController.setDate(date);
         viewDateController.displayDate();
         viewDateController.listEventsAvailableForDay();
 
@@ -133,17 +97,5 @@ public class CreateEventController {
         stage.show();
 //        welcomePageController.switchToApp(e);
 
-    }
-
-    public void myMethod(ActionEvent e) throws IOException{
-        String words = textField.getText();
-        System.out.println(words);
-        label.setText(words);
-    }
-
-    public void setNewTitle(ActionEvent e) throws IOException{
-        title = peterPan.getText();
-        System.out.println(title);
-        labelForTitle.setText(title);
     }
 }
