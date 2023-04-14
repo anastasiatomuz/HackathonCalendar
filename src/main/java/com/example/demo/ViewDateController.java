@@ -97,8 +97,6 @@ public class ViewDateController {
     }
 
     public void listEventsAvailableForDay(){
-        System.out.println("called the method");
-        System.out.println(date);
         displayCurrentEvents.setText("");
         if (!CalendarLogic.hasEvents(date)){
             displayCurrentEvents.setText("No event available for this date yet");
@@ -109,6 +107,10 @@ public class ViewDateController {
             }
         }
     }
+
+
+
+
 
 
 }

@@ -19,18 +19,6 @@ import java.time.format.DateTimeFormatter;
 public class WelcomePageController {
     @FXML
     private DatePicker dateField;
-
-    @FXML
-    TextField test;
-
-    @FXML
-    TextField testField2;
-
-    @FXML
-    Button button;
-    @FXML
-    Label newLabel;
-
     private Stage stage;
     private Scene scene;
     private Parent root;
@@ -65,16 +53,6 @@ public class WelcomePageController {
         stage.show();
     }
 
-    public void randomMethod(){
-        String word = test.getText();
-        newLabel.setText(word);
-    }
-
-    public void buttonMethod(ActionEvent e) throws IOException{
-        String str1 = test.getText();
-        String str2 = testField2.getText();
-        newLabel.setText(str1 + " " + str2);
-    }
 
 
 

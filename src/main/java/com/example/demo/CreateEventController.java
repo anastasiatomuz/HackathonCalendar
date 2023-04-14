@@ -16,15 +16,16 @@ import java.util.ArrayList;
 public class CreateEventController {
 
     @FXML
-    TextField peterPan;
+    TextField peterPan; //title
     @FXML
-    Label labelForTitle;
+    RadioButton captainHook; //radio
     @FXML
-    Label label;
+    TextField spongeBob; //start
     @FXML
-    TextField textField;
+    TextField patrick; //end
     @FXML
-    Button button;
+    TextArea sofiaTheFirst; //info
+
     @FXML
     private Label dateLabel;
     private Stage stage;
@@ -95,7 +96,6 @@ public class CreateEventController {
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
-//        welcomePageController.switchToApp(e);
 
     }
 }
