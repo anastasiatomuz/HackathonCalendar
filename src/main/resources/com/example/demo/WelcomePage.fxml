@@ -6,17 +6,17 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="yearTextField" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.WelcomePageController">
+<AnchorPane fx:id="yearTextField" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #26008c;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.WelcomePageController">
    <children>
-      <Label layoutX="161.0" layoutY="160.0" text="Enter the date you wish to view:">
+      <Label layoutX="161.0" layoutY="160.0" text="Enter the date you wish to view:" textFill="WHITE">
          <font>
             <Font size="20.0" />
          </font>
       </Label>
-      <Label layoutX="263.0" layoutY="192.0" text="choose a date" />
-      <Button fx:id="enterButton" layoutX="278.0" layoutY="262.0" mnemonicParsing="false" onAction="#switchToApp" style="-fx-background-color: #4287f5;" text="Enter" textFill="WHITE" />
-      <DatePicker fx:id="dateField" layoutX="215.0" layoutY="221.0" />
-      <Label layoutX="96.0" layoutY="74.0" text="Welcome to the Calendar App!">
+      <Label layoutX="263.0" layoutY="192.0" text="choose a date" textFill="WHITE" />
+      <Button fx:id="enterButton" layoutX="278.0" layoutY="262.0" mnemonicParsing="false" onAction="#switchToApp" style="-fx-background-color: #ffd747;" text="Enter" textFill="#26008c" />
+      <DatePicker fx:id="dateField" layoutX="207.0" layoutY="220.0" />
+      <Label layoutX="100.0" layoutY="73.0" text="Welcome to the Calendar App!" textFill="#ffd747">
          <font>
             <Font size="30.0" />
          </font>

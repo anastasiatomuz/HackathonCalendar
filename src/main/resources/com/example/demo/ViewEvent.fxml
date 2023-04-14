@@ -6,15 +6,14 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.ViewEventController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #26008c;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.ViewEventController">
    <children>
-      <Label layoutX="269.0" layoutY="14.0" text="Event">
+      <Label layoutX="269.0" layoutY="14.0" text="Event" textFill="#ffd747">
          <font>
             <Font size="27.0" />
          </font>
       </Label>
       <TextArea fx:id="hugeTextArea" layoutX="47.0" layoutY="64.0" prefHeight="257.0" prefWidth="506.0" />
-      <Button fx:id="buttonToReturn" layoutX="286.0" layoutY="351.0" mnemonicParsing="false" onAction="#returnMethod" text="OK" />
+      <Button fx:id="buttonToReturn" layoutX="284.0" layoutY="349.0" mnemonicParsing="false" onAction="#returnMethod" style="-fx-background-color: #ffd747;" text="OK" textFill="#26008c" />
    </children>
 </AnchorPane>

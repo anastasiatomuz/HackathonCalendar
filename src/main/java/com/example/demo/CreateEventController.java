@@ -46,10 +46,21 @@ public class CreateEventController {
     }
 
     public void switchBack(ActionEvent e) throws IOException {
-        welcomePageController = new WelcomePageController();
-        viewDateController = new ViewDateController();
-        welcomePageController.switchToApp(e);
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("ViewDate.fxml"));
+        root = fxmlLoader.load();
+
+        viewDateController = fxmlLoader.getController();
+
+        //set the date for the view date window
+        viewDateController.setDate(date);
+        viewDateController.displayDate();
         viewDateController.listEventsAvailableForDay();
+
+        //load the scene/window
+        stage = (Stage) ((Node)e.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
     }
 
     public void displayDate(){
@@ -59,7 +70,7 @@ public class CreateEventController {
     public void addComplete(ActionEvent e) throws IOException {
 
         String title = peterPan.getText();
-        boolean allDay = captainHook.isDisabled();
+        boolean allDay = captainHook.isSelected();
         String start = spongeBob.getText();
         String end = patrick.getText();
         String info = sofiaTheFirst.getText();

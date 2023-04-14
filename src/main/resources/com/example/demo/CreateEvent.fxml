@@ -8,23 +8,23 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.CreateEventController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #26008c;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.CreateEventController">
    <children>
-      <Label layoutX="194.0" layoutY="14.0" text="Create Your Event">
+      <Label layoutX="194.0" layoutY="14.0" text="Create Your Event" textFill="#ffd747">
          <font>
             <Font size="27.0" />
          </font>
       </Label>
-      <Label layoutX="62.0" layoutY="93.0" text="Title:" />
-      <Label layoutX="62.0" layoutY="183.0" text="Start Time:" />
-      <Label layoutX="62.0" layoutY="142.0" text="All Day?" />
-      <Label layoutX="62.0" layoutY="226.0" text="End Time:" />
-      <Label layoutX="313.0" layoutY="94.0" text="Info/Description:" />
-      <Button layoutX="21.0" layoutY="355.0" mnemonicParsing="false" onAction="#switchBack" style="-fx-background-color: #4287f5;" text="Go Back" textFill="WHITE" />
-      <Button fx:id="addEventButton" layoutX="261.0" layoutY="292.0" mnemonicParsing="false" onAction="#addComplete" style="-fx-background-color: #4287f5;" text="Add Event" textFill="WHITE" />
-      <Label fx:id="dateLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="287.0" layoutY="53.0" text="Date" />
+      <Label layoutX="62.0" layoutY="93.0" text="Title:" textFill="WHITE" />
+      <Label layoutX="62.0" layoutY="183.0" text="Start Time:" textFill="WHITE" />
+      <Label layoutX="62.0" layoutY="142.0" text="All Day?" textFill="WHITE" />
+      <Label layoutX="62.0" layoutY="226.0" text="End Time:" textFill="WHITE" />
+      <Label layoutX="313.0" layoutY="94.0" text="Info/Description:" textFill="WHITE" />
+      <Button layoutX="21.0" layoutY="355.0" mnemonicParsing="false" onAction="#switchBack" style="-fx-background-color: #ffd747;" text="Go Back" textFill="#26008c" />
+      <Button fx:id="addEventButton" layoutX="261.0" layoutY="292.0" mnemonicParsing="false" onAction="#addComplete" style="-fx-background-color: #ffd747;" text="Add Event" textFill="#26008c" />
+      <Label fx:id="dateLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="261.0" layoutY="53.0" text="Date" textFill="WHITE" />
       <TextField fx:id="peterPan" layoutX="114.0" layoutY="90.0" />
-      <RadioButton fx:id="captainHook" layoutX="131.0" layoutY="142.0" mnemonicParsing="false" text="Yes" />
+      <RadioButton fx:id="captainHook" layoutX="131.0" layoutY="142.0" mnemonicParsing="false" text="Yes" textFill="WHITE" />
       <TextField fx:id="spongeBob" layoutX="131.0" layoutY="179.0" prefHeight="25.0" prefWidth="85.0" />
       <TextField fx:id="patrick" layoutX="131.0" layoutY="222.0" prefHeight="25.0" prefWidth="85.0" />
       <TextArea fx:id="sofiaTheFirst" layoutX="313.0" layoutY="126.0" prefHeight="132.0" prefWidth="253.0" />
