@@ -15,7 +15,6 @@
             <Font size="27.0" />
          </font>
       </Label>
-      <TextField layoutX="101.0" layoutY="89.0" />
       <Label layoutX="62.0" layoutY="93.0" text="Title:" />
       <TextField layoutX="132.0" layoutY="179.0" prefHeight="26.0" prefWidth="85.0" />
       <Label layoutX="62.0" layoutY="183.0" text="Start Time:" />
@@ -27,7 +26,12 @@
       <Label layoutX="313.0" layoutY="94.0" text="Info/Description:" />
       <TextArea layoutX="313.0" layoutY="125.0" prefHeight="132.0" prefWidth="258.0" />
       <Button layoutX="21.0" layoutY="355.0" mnemonicParsing="false" onAction="#switchBack" style="-fx-background-color: #4287f5;" text="Go Back" textFill="WHITE" />
-      <Button layoutX="261.0" layoutY="292.0" mnemonicParsing="false" onAction="#addComplete" style="-fx-background-color: #4287f5;" text="Add Event" textFill="WHITE" />
+      <Button fx:id="addEventButton" layoutX="261.0" layoutY="292.0" mnemonicParsing="false" onAction="#addComplete" style="-fx-background-color: #4287f5;" text="Add Event" textFill="WHITE" />
       <Label fx:id="dateLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="287.0" layoutY="53.0" text="Date" />
+      <TextField fx:id="textField" layoutX="402.0" layoutY="317.0" onAction="#myMethod" />
+      <Button fx:id="button" layoutX="470.0" layoutY="343.0" mnemonicParsing="false" onAction="#myMethod" text="go" />
+      <Label fx:id="label" layoutX="472.0" layoutY="296.0" text="text" />
+      <Label fx:id="labelForTitle" layoutX="118.0" layoutY="62.0" text="the title we put in" />
+      <TextField fx:id="peterPan" layoutX="114.0" layoutY="90.0" />
    </children>
 </AnchorPane>

@@ -70,12 +70,15 @@ public class ViewDateController {
     }
 
     public void listEventsAvailableForDay(){
+        System.out.println("called the method");
+        System.out.println(date);
+        displayCurrentEvents.setText("");
         if (!CalendarLogic.hasEvents(date)){
             displayCurrentEvents.setText("No event available for this date yet");
         } else {
             ArrayList<Event> dayEventList = CalendarLogic.getListOfEvents(date);
-            for (int i = 0; i < dayEventList.size(); i ++){
-                displayCurrentEvents.appendText(i + ". " + dayEventList.get(i) + "\n");
+            for (int i = 1; i < dayEventList.size(); i ++){
+                displayCurrentEvents.appendText(i + ". " + dayEventList.get(i).getTitle() + "\n");
             }
         }
     }
