@@ -2,6 +2,9 @@ package com.example.demo;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.text.Text;
@@ -29,17 +32,20 @@ public class CreateEventController {
     private WelcomePageController welcomePageController;
     private ViewDateController viewDateController;
     private CalendarLogic calendarLogic;
+    private Parent root;
 
+//    @FXML
+//    TextField titleField;
     @FXML
-    private TextField titleField;
+    RadioButton radioButton;
     @FXML
-    private RadioButton radioButton;
+    RadioButton radioButton2;
     @FXML
-    private TextField startTimeField;
+    TextField startTimeField;
     @FXML
-    private TextField endTimeField;
+    TextField endTimeField;
     @FXML
-    private TextArea infoArea;
+    TextArea infoArea;
 
     @FXML
     Button addEventButton;
@@ -70,7 +76,7 @@ public class CreateEventController {
         dateLabel.setText(date);
     }
 
-    public void addComplete(ActionEvent e) {
+    public void addComplete(ActionEvent e) throws IOException {
         //viewDateController = new ViewDateController();
         System.out.println("ahhhhhhhhhhh");
         String currentDate = "4/13/2023";
@@ -87,6 +93,9 @@ public class CreateEventController {
         System.out.println(end);
         System.out.println(info);
 
+
+
+        Event newEvent = new Event();
         //add the info about the day to the event object
         newEvent.setTitle(title);
         newEvent.setAllDay(allDay);

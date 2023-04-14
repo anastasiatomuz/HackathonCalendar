@@ -28,6 +28,12 @@ public class ViewDateController {
     private Scene scene;
     private String date;
 
+    //constructor
+    public ViewDateController(){
+        displayCurrentEvents = new TextArea();
+        date = "";
+        listEventsAvailableForDay();
+    }
 
     public void setDate(String newDate){
         date = newDate;
